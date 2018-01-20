@@ -5,7 +5,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.util.Log;
 
-import io.orbi.ar.representation.*;
+import com.pacific.detect.sensortest.utils.*;
 
 
 public class ImprovedOrientationSensor2Provider extends OrientationProvider {

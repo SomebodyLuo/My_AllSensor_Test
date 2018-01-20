@@ -3,13 +3,13 @@
     package="com.pacific.detect.sensortest">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
@@ -29,11 +29,16 @@
             </intent-filter>
         </activity>
 
-        <!--<activity-->
-            <!--android:name=".ui.activity.ARCamActivity"-->
-            <!--android:theme="@style/Theme.AppCompat.NoActionBar" />-->
+        <!-- <activity -->
+        <!-- android:name=".ui.activity.ARCamActivity" -->
+        <!-- android:theme="@style/Theme.AppCompat.NoActionBar" /> -->
         <!-- 以下都是测试页面 -->
         <activity android:name=".ui.GyroAccRotCounterActivity" />
+        <activity
+            android:name=".ui.NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.GPSLocationData"></activity>
     </application>
 
 </manifest>

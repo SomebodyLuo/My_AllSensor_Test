@@ -24,6 +24,7 @@ import java.util.Locale;
 
 public class LocationDetection implements LocationListener {
 
+    private final String TAG = "luoyouren";
     private LocationManager locationManager;
     private double latitude;
     private double longitude;
@@ -36,7 +37,7 @@ public class LocationDetection implements LocationListener {
     {
         this.ctx = context;
 
-        Log.d("@@APP", "LOCATION");
+        Log.d(TAG, "LOCATION");
         locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         criteria = new Criteria();
         criteria.setAccuracy(Criteria.ACCURACY_FINE);
@@ -45,15 +46,17 @@ public class LocationDetection implements LocationListener {
         if (ActivityCompat.checkSelfPermission(atx, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(atx, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             throw new RuntimeException("Location permissions must be granted to function.");
         }
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1, 0, this);
+
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1, 0, this);
         setMostRecentLocation(locationManager.getLastKnownLocation(provider));
 
         Location location = locationManager.getLastKnownLocation(provider);
 
+        Log.i(TAG, "getLastKnownLocation()");
         if (location != null)
         {
 
-            Log.i("@@APP", "Location achieved!");
+            Log.i(TAG, "Location achieved!");
             latitude = location.getLatitude();
             longitude = location.getLongitude();
 
@@ -62,12 +65,12 @@ public class LocationDetection implements LocationListener {
         }
         else
         {
+            Log.i(TAG, "No location :(");
             //default to setting in camerafragment
             latitude = 0;
             longitude = 0;
             loci = "深圳";
 
-            Log.i("@@APP", "No location :(");
 
         }
 

@@ -15,7 +15,7 @@ import android.widget.TextView;
 // gyroscope & accelerator & compass
 public class GyroAccRotCounterActivity extends AppCompatActivity implements SensorEventListener{
 
-    private final String TAG = "luoyouren";
+    private final String TAG = "GyroAccRotCounterActivity";
 
     private int spaceHeight = 20;
     private TextView mGyroscopeSensorTextView = null;
@@ -45,8 +45,6 @@ public class GyroAccRotCounterActivity extends AppCompatActivity implements Sens
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
         // UI设置
 //        setContentView(R.layout.activity_gyroscope);
