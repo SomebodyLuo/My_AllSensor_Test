@@ -12,6 +12,9 @@ import android.view.View;
 
 import com.pacific.detect.sensortest.R;
 
+//import eu.kudan.kudan.ARActivity;
+//import eu.kudan.kudan.ARImageTrackable;
+
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
@@ -34,14 +37,14 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_gps).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(GPSLocationData.class);
+                startActivity(AndroidGPSLocationActivity.class);
             }
         });
 
-        findViewById(R.id.btn_image_renderer).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_baidu_location).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(ImageActivity.class);
+                startActivity(BaiduLocationActivity.class);
             }
         });
 
@@ -120,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private static final String[] CAMERA_PERMISSIONS = {
             Manifest.permission.CAMERA,
+            Manifest.permission.INTERNET,
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.ACCESS_FINE_LOCATION,

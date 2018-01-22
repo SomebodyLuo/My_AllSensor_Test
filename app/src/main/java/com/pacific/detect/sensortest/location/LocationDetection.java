@@ -32,10 +32,12 @@ public class LocationDetection implements LocationListener {
     private String provider;
     private Context ctx;
     public static String loci = "";
+    private GPSLocationListener mListener;
 
-    public LocationDetection(Context context, Activity atx)
+    public LocationDetection(Context context, Activity atx, GPSLocationListener listener)
     {
         this.ctx = context;
+        mListener = listener;
 
         Log.d(TAG, "LOCATION");
         locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
@@ -134,7 +136,7 @@ public class LocationDetection implements LocationListener {
         latitude = lat;
         longitude = lon;
 
-
+        mListener.UpdateLocation(location);
     }
 
     /*

@@ -20,7 +20,14 @@ public class EnviroDetection
     public EnviroDetection(double lat, double lon)
     {
         GregorianCalendar cal = new GregorianCalendar();
-        sunPosition =  Grena3.calculateSolarPosition(cal,lat, lon,70,1000,20);
+        sunPosition =  Grena3.calculateSolarPosition(cal, lat, lon,70,1000,20);
+        Log.e(TAG, "Found Sun position  as " + sunPosition.getAzimuth() + ", " + sunPosition.getZenithAngle());
+    }
+
+    public void updateLocation(double lat, double lon)
+    {
+        GregorianCalendar cal = new GregorianCalendar();
+        sunPosition =  Grena3.calculateSolarPosition(cal, lat, lon,70,1000,20);
         Log.e(TAG, "Found Sun position  as " + sunPosition.getAzimuth() + ", " + sunPosition.getZenithAngle());
     }
 

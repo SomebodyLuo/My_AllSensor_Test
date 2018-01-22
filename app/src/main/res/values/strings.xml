@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">SensorTest</string>
+
     <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_activity_android_location">AndroidGPSLocationActivity</string>
+    <string name="title_activity_baidu_location">BaiduLocationActivity</string>
+    <string name="title_activity_sensors">GyroAccRotCounterActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

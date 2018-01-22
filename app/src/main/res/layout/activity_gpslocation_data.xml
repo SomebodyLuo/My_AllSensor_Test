@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pacific.detect.sensortest.ui.GPSLocationData">
+    tools:context="com.pacific.detect.sensortest.ui.AndroidGPSLocationActivity">
 
 </android.support.constraint.ConstraintLayout>
