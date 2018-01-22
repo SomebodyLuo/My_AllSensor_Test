@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
 import com.pacific.detect.sensortest.location.EnviroDetection;
 import com.pacific.detect.sensortest.location.LocationDetection;
 import com.pacific.detect.sensortest.location.GPSLocationListener;
@@ -53,7 +54,12 @@ public class AndroidGPSLocationActivity extends AppCompatActivity {
     class MyListener implements GPSLocationListener {
 
         @Override
-        public void update(double latitude, double longitude, int lum, boolean isInstant)
+        public void update(double latitude, double longitude, int lum, boolean isInstant, int times, int err)
+        {
+        }
+
+        @Override
+        public void update(BDLocation bdLocation, int luminosity, boolean isInstant, int times)
         {
         }
 

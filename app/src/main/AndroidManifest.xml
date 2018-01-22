@@ -7,13 +7,28 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 访问网络，网络定位需要上网-->
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 这个权限用于进行网络定位-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- SD卡读取权限，用户写入离线定位数据-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -23,11 +38,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!--Android定位SDK自v4.0版本起，需要进行AK鉴权。
+        开发者在使用SDK前，需完成AK申请，并在AndroidManifest.xml文件中，正确填写AK。-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="pPRjXKLLQnWlibE7whq565WoWmiwIb8f" />
+            android:value="dEzP7NjUAv6fM8DlYTeZWlueRixcuG2h" />
 
-        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+        <!-- 使用定位SDK，需在Application标签中声明service组件，每个App拥有自己单独的定位service
+        声明service组件 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
         </service>
 
 

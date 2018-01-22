@@ -3,13 +3,17 @@ package com.pacific.detect.sensortest.location;
 import android.location.Location;
 import android.os.Bundle;
 
+import com.baidu.location.BDLocation;
+
 /**
  * 类描述：供外部实现的接口（抽象观察者）
  * Created by lizhenya on 2016/9/12.
  */
 public interface GPSLocationListener {
 
-    void update(double latitude, double longitude, int luminosity, boolean isInstant);
+    void update(double latitude, double longitude, int luminosity, boolean isInstant, int times, int errorCode);
+
+    void update(BDLocation bdLocation, int luminosity, boolean isInstant, int times);
 
     /**
      * 方法描述：位置信息发生改变时被调用
